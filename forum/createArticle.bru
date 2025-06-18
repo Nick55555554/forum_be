@@ -1,0 +1,21 @@
+meta {
+  name: createArticle
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}/articles/
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "title": "Tes13",
+    "content": "Test ",
+    "preview": "efs",
+    "isPublished": false,
+    "type": "technology"
+  }
+}

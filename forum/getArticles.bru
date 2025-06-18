@@ -1,0 +1,18 @@
+meta {
+  name: getArticles
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{url}}/articles
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "page": 1,
+    "limit": 40
+  }
+}

@@ -1,0 +1,17 @@
+meta {
+  name: createComment
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{url}}/comments/68513f4ec63dee8730c34ebc
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "text":"New first comment"
+  }
+}

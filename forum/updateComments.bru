@@ -1,0 +1,17 @@
+meta {
+  name: updateComments
+  type: http
+  seq: 11
+}
+
+patch {
+  url: {{url}}/comments/6846d1b19f9b0d3f8c9804c3
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "text":" new text from new article"
+  }
+}

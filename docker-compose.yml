@@ -1,0 +1,37 @@
+version: "3.8"
+
+services:
+    backend:
+        build: .
+        ports:
+            - "3001:3001" # Порт сервера
+        environment:
+            - NODE_ENV=development
+            - MONGO_URL=mongodb://mongo:27017/your-db
+            - REDIS_URL=redis://redis:6379
+        depends_on:
+            - mongo
+            - redis
+        volumes:
+            - .:/app
+            - /app/node_modules
+
+    # MongoDB
+    mongo:
+        image: mongo:6
+        ports:
+            - "27017:27017"
+        volumes:
+            - mongo-data:/data/db
+
+    # Redis
+    redis:
+        image: redis:7-alpine
+        ports:
+            - "6379:6379"
+        volumes:
+            - redis-data:/data
+
+volumes:
+    mongo-data:
+    redis-data:
